@@ -1,0 +1,21 @@
+.header_favorite {
+    padding-inline: unset;
+    text-align: left;
+}
+.header_icon {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.header {
+    --background: none;
+    --border-width: 0!important;
+}
+.login_custom {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    height: 26px;
+}
+.login_text {
+    font-size: 12px;
+}

@@ -1,0 +1,36 @@
+.header_favorite {
+    padding-inline: unset;
+    text-align: left;
+    padding-left: 10px;
+}
+.header_icon {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.header {
+    --background: none;
+    --border-width: 0!important;
+}
+.login_custom {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    height: 26px;
+}
+.login_text {
+    font-size: 12px;
+}
+.icon_header {
+    position: absolute;
+    right: 15px;
+}
+.menu {
+    display: flex;
+    align-items: center;
+}
+.menu_icon {
+    font-size: 24px;
+}
+.ion_fullWidth {
+    width: 100%;
+}
