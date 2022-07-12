@@ -26,9 +26,9 @@ function Favorites() {
                 Đăng nhập
               </IonLabel>
             </IonChip> */}
-            <a href="/addservices">
+            <a href="/addservices" className={style.header_favorite_add_icon}>
               <IonIcon
-                className={style.header_favorite_add_icon}
+                // className={style.header_favorite_add_icon}
                 icon={addOutline}
               ></IonIcon>
             </a>

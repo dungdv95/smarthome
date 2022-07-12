@@ -19,3 +19,7 @@
 .login_text {
     font-size: 12px;
 }
+.title_custom {
+    font-size: 18px;
+    font-family: system-ui;
+}

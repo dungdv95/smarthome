@@ -49,6 +49,8 @@ import Life from './pages/Life';
 import AutoMode from './pages/AutoMode';
 import Menu from './pages/Menu';
 import AddServices from './components/AddServices/index';
+import Login from './pages/Login';
+import ManageLocation from './components/ManageLocation/index';
 
 setupIonicReact();
 
@@ -65,11 +67,11 @@ const App: React.FC = () => {
           {/* define router */}
           <IonRouterOutlet>
             <Route exact path="/">
-              <Redirect to="/favorites" />
+              <Redirect to="/device" />
             </Route>
-            <Route exact path="/favorites">
+            {/* <Route exact path="/favorites">
               <Favorites />
-            </Route>
+            </Route> */}
             <Route exact path="/device">
               <Device />
             </Route>
@@ -85,13 +87,19 @@ const App: React.FC = () => {
             <Route path="/addservices">
               <AddServices />
             </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/manage-location">
+              <ManageLocation />
+            </Route>
           </IonRouterOutlet>
 
           <IonTabBar className={style.tab} slot="bottom" onIonTabsDidChange={(event) => onChangeTab(event)}>
-            <IonTabButton tab="favorites" href="/favorites">
+            {/* <IonTabButton tab="favorites" href="/favorites">
               <IonIcon icon={tab === 'favorites' ? heart : heartOutline} />
               <IonLabel>Yêu thích</IonLabel>
-            </IonTabButton>
+            </IonTabButton> */}
             <IonTabButton tab="device" href="/device">
               <IonIcon icon={tab === 'device' ? rocket : rocketOutline} />
               <IonLabel>Thiết bị</IonLabel>
