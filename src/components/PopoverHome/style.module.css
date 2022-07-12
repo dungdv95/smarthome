@@ -1,0 +1,12 @@
+.select_custom {
+    --min-height: unset;
+    --border-color: #fff;
+}
+.item_custom {
+    --min-height: auto;
+    border-top: 1px solid var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgba(0, 0, 0, 0.13))));
+    --border-color: #fff;
+}
+.pad_left_20 {
+    padding-left: 20px;
+}
