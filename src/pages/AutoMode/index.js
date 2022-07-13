@@ -13,7 +13,7 @@ import {
 
 function AutoMode() {
   return (
-    <Fragment>
+    <IonPage>
       <IonHeader>
         <IonToolbar className={style.header}>
           <IonTitle className={style.header_favorite}>
@@ -22,7 +22,7 @@ function AutoMode() {
           </IonTitle>
         </IonToolbar>
       </IonHeader>
-    </Fragment>
+    </IonPage>
   );
 }
 export default AutoMode;

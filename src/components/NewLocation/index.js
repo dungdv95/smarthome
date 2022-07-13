@@ -1,41 +1,59 @@
 import {
+    IonAvatar,
+  IonBackButton,
   IonButton,
   IonButtons,
   IonCard,
   IonCardContent,
   IonContent,
+  IonFooter,
   IonHeader,
+  IonIcon,
   IonInput,
   IonItem,
+  IonLabel,
   IonList,
   IonModal,
+  IonPage,
+  IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import { chevronBackOutline } from "ionicons/icons";
+import { add, checkmark, chevronBackOutline } from "ionicons/icons";
 import { Fragment, useState } from "react";
+import { useHistory } from "react-router";
 import style from "./style.module.css";
+import back1 from '../../assets/images/background/background1.jpg'
 
-function ModalNewLocation(props) {
-  const openNewLocation = props.openNewLocation;
-  const closeModal = props.closeModal;
-  const submitLocation = props.submitLocation;
-
+function NewLocation(props) {
+  const history = useHistory();
   const [nameLocation, setNameLocation] = useState("");
 
   const onChangeName = (e) => {
     setNameLocation(e.detail.value);
   };
   const submit = () => {
-    submitLocation(nameLocation);
-    closeModal();
-    setNameLocation("");
+    history.goBack();
+  };
+
+  const backPage = () => {
+    history.goBack();
   };
 
   return (
-    <IonModal isOpen={openNewLocation}>
+    <IonPage>
       <IonHeader>
         <IonToolbar className={style.head_title_custom}>
-          <b>Thêm vị trí mới</b>
+          <IonButtons slot="start" onClick={backPage}>
+            <IonButton>
+              <IonIcon icon={chevronBackOutline} />
+              <b>Cancel</b>
+            </IonButton>
+            {/* <IonBackButton text="Cancel" /> */}
+          </IonButtons>
+          <IonTitle>Thêm vị trí mới</IonTitle>
+          <IonButtons slot="end" onClick={submit}>
+            <IonButton>Confirm</IonButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -60,6 +78,12 @@ function ModalNewLocation(props) {
                   </h6>
                 </div>
               </IonItem>
+              <IonItem className={style.item_custom}>
+                <IonAvatar slot="end">
+                  <img src={back1} />
+                </IonAvatar>
+                <IonLabel>Hình nền</IonLabel>
+              </IonItem>
               <IonItem className={style.item_custom_room}>
                 <div>
                   <h4>
@@ -75,16 +99,7 @@ function ModalNewLocation(props) {
           </IonCardContent>
         </IonCard>
       </IonContent>
-      {/* <IonFooter> */}
-      <div className={style.footer_add}>
-        <IonButtons slot="start">
-          <IonButton onClick={closeModal}>Thoát</IonButton>
-        </IonButtons>
-        <IonButtons slot="end" onClick={submit}>
-          <IonButton>Hoàn tất</IonButton>
-        </IonButtons>
-      </div>
-    </IonModal>
+    </IonPage>
   );
 }
-export default ModalNewLocation;
+export default NewLocation;
