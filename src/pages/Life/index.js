@@ -12,7 +12,7 @@ import {
   import style from "./style.module.css";
 function Life() {
   return (
-    <Fragment>
+    <IonPage>
       <IonHeader>
         <IonToolbar className={style.header}>
           <IonTitle className={style.header_favorite}>
@@ -21,7 +21,7 @@ function Life() {
           </IonTitle>
         </IonToolbar>
       </IonHeader>
-    </Fragment>
+    </IonPage>
   );
 }
 export default Life;

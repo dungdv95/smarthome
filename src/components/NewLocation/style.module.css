@@ -1,0 +1,23 @@
+.footer_add {
+    display: flex;
+    justify-content: center;
+}
+.head_title_custom {
+    padding-left:15px;
+}
+.item_custom {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.item_custom_input {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    --inner-border-width: 0 0 1px 0;
+    --border-width: 0;
+}
+.item_custom_room {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    --inner-border-width: 0 0 0 0;
+    --border-width: 0;
+}

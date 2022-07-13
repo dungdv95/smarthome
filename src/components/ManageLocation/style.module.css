@@ -1,3 +1,14 @@
 .card_custom {
     border-radius: 20px;
 }
+.avatar_custom {
+    width: 36px;
+    height: 36px;
+}
+.card_content_custom {
+    display: flex;
+    align-items: center;
+}
+.card_label_custom {
+    padding-left: 15px;
+}

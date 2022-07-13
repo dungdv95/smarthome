@@ -51,17 +51,25 @@ import Menu from './pages/Menu';
 import AddServices from './components/AddServices/index';
 import Login from './pages/Login';
 import ManageLocation from './components/ManageLocation/index';
+import NewLocation from './components/NewLocation';
+import UIContext from "./my-context";
 
 setupIonicReact();
 
 
 const App: React.FC = () => {
+  const { showTabs } = React.useContext(UIContext);
+  const {backGroundImg} = React.useContext(UIContext);
   const [tab, setTab] = useState<any>('favorites')
   const onChangeTab = (event: CustomEvent<{ tab: string; }>) => {
     setTab(event.detail.tab);
   }
+
+  let tabBarStyle = showTabs ? undefined : { display: "none" };
+  let backGroundStyle = backGroundImg ? {backgroundImage:`url('${backGroundImg}')`} : undefined;
+
   return (
-    <IonApp>
+    <IonApp style={backGroundStyle}>
       <IonReactRouter>
         <IonTabs>
           {/* define router */}
@@ -90,12 +98,15 @@ const App: React.FC = () => {
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="/manage-location">
+            <Route path="/device/manage-location">
               <ManageLocation />
+            </Route>
+            <Route path="/device/new-location">
+              <NewLocation />
             </Route>
           </IonRouterOutlet>
 
-          <IonTabBar className={style.tab} slot="bottom" onIonTabsDidChange={(event) => onChangeTab(event)}>
+          <IonTabBar className={style.tab} slot="bottom" onIonTabsDidChange={(event) => onChangeTab(event)} style={tabBarStyle}>
             {/* <IonTabButton tab="favorites" href="/favorites">
               <IonIcon icon={tab === 'favorites' ? heart : heartOutline} />
               <IonLabel>Yêu thích</IonLabel>

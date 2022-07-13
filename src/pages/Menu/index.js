@@ -26,7 +26,7 @@ import style from "./style.module.css";
 
 function Menu() {
   return (
-    <Fragment>
+    <IonPage>
       <IonHeader>
         <IonToolbar className={style.header}>
           <IonTitle className={style.header_favorite}>
@@ -62,7 +62,7 @@ function Menu() {
           </IonCardContent>
         </IonCard>
       </IonContent>
-    </Fragment>
+    </IonPage>
   );
 }
 export default Menu;
